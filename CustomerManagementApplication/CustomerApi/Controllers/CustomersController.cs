@@ -42,8 +42,7 @@ namespace CustomerApi.Controllers
         [HttpPost("addCustomer")]
         public string addCustomer(CustomerDetails CustomerData)
         {
-            string response = services.addNewCustomer(CustomerData);
-            //string value = JsonConvert.SerializeObject(response);
+            string response = services.addNewCustomer(CustomerData);            
             return response;
         }
     }

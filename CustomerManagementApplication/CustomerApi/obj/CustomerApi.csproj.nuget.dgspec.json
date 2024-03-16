@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\CustomerManagementApplication\\CustomerApi\\CustomerApi.csproj": {}
+    "D:\\archana-project-2024\\CustomerManagementApplication\\CustomerApi\\CustomerApi.csproj": {}
   },
   "projects": {
-    "D:\\CustomerManagementApplication\\CustomerApi\\CustomerApi.csproj": {
+    "D:\\archana-project-2024\\CustomerManagementApplication\\CustomerApi\\CustomerApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\CustomerManagementApplication\\CustomerApi\\CustomerApi.csproj",
+        "projectUniqueName": "D:\\archana-project-2024\\CustomerManagementApplication\\CustomerApi\\CustomerApi.csproj",
         "projectName": "CustomerApi",
-        "projectPath": "D:\\CustomerManagementApplication\\CustomerApi\\CustomerApi.csproj",
+        "projectPath": "D:\\archana-project-2024\\CustomerManagementApplication\\CustomerApi\\CustomerApi.csproj",
         "packagesPath": "C:\\Users\\lenovo\\.nuget\\packages\\",
-        "outputPath": "D:\\CustomerManagementApplication\\CustomerApi\\obj\\",
+        "outputPath": "D:\\archana-project-2024\\CustomerManagementApplication\\CustomerApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
