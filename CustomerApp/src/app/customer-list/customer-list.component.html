@@ -1,0 +1,124 @@
+<app-header></app-header>
+
+<div class="container mt-4">
+  <div class="box">
+    <form [formGroup]="customerForm" class="row">
+      <div class="col-sm-4 mb-2">
+        <input
+          class="form-control"
+          type="text"
+          formControlName="CustomerId"
+          placeholder="Search by Customer id"
+        />
+      </div>
+      <div class="col-sm-4 mb-2">
+        <button
+          class="btn btn-primary btn-block"
+          type="button"
+          (click)="searchCustomer()"
+        >
+          Search
+        </button>
+      </div>
+      <div class="col-sm-4 mb-2">
+       
+          <button class="btn btn-success ml-2 " ngxPrint printSectionId="printSection">Print</button>
+        &nbsp;
+        
+      </div>
+      <div class="row" formArrayName="customerList" id="printSection">
+        <table width="100%" class="table-structure" border="1">
+          <tr>
+            <th>CustomerCode</th>
+            <th>Customer Name</th>
+            <th>Address</th>
+            <th>Email</th>
+            <th>MobileNo</th>
+            <th>GeoLocation</th>
+            <th>Action</th>
+          </tr>
+          <tr
+            *ngFor="let Details of customerList.controls; let i = index"
+            [formGroupName]="i"
+          >
+            <td>
+              <div>                
+                
+                <label>{{Details.get('CustomerCode')?.value }}</label>
+              </div>
+            </td>
+            <td>
+              <label *ngIf="!isEditable[i]">{{Details.get('Name')?.value }}</label>
+              <div *ngIf="isEditable[i]">
+                <input
+                  class="form-control"
+                  type="text"
+                  formControlName="Name"
+                />
+              </div>
+            </td>
+            <td>
+              <label *ngIf="!isEditable[i]">{{Details.get('Address')?.value }}</label>
+              <div *ngIf="isEditable[i]">
+                <input
+                  class="form-control"
+                  type="text"
+                  formControlName="Address"
+                />
+              </div>
+            </td>
+            <td>
+              <label *ngIf="!isEditable[i]">{{Details.get('Email')?.value }}</label>
+              <div  *ngIf="isEditable[i]">
+                <input
+                  class="form-control"
+                  type="text"
+                  formControlName="Email"
+                />
+              </div>
+            </td>
+            <td>
+              <label *ngIf="!isEditable[i]">{{Details.get('MobileNo')?.value }}</label>
+              <div  *ngIf="isEditable[i]">
+                <input
+                  class="form-control"
+                  type="text"
+                  formControlName="MobileNo"
+                />
+              </div>
+            </td>
+            <td>
+              <label *ngIf="!isEditable[i]">{{Details.get('GeoLocation')?.value }}</label>
+              <div *ngIf="isEditable[i]">
+                <input
+                  class="form-control"
+                  type="text"
+                  formControlName="GeoLocation"
+                />
+              </div>
+            </td>
+            <td>
+              <div *ngIf="!isEditable[i]">
+                <button class="btn btn-secondary mb-2 btn-edit" type="button" (click)="Edit(i)">
+                  Edit
+                </button>
+                <button class="btn btn-secondary mb-2 btn-delete" type="button" (click)="Delete(i)">
+                  Delete
+                </button>
+              </div>
+              <div *ngIf="isEditable[i]">
+                <button class="btn btn-secondary mb-2 btn-edit" type="button" (click)="update(i)">
+                  update
+                </button>
+                <button class="btn btn-secondary mb-2 btn-edit" type="button" (click)="Cancel(i)">
+                  Cancel
+                </button>
+              </div>
+              
+            </td>
+          </tr>
+        </table>
+      </div>
+    </form>
+  </div>
+</div>

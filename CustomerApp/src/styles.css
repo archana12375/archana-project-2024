@@ -1,0 +1,12 @@
+/* You can add global styles to this file, and also import other style files */
+@import "bootstrap/dist/css/bootstrap.min.css";
+.btn-edit {
+    background-color: #007bff; 
+    margin-bottom: 10px; 
+    margin-right: 10px; 
+  }
+
+  .btn-delete {
+    background-color: #dc3545; 
+    margin-bottom: 10px; 
+  }

@@ -1,0 +1,7 @@
+.nav-link {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: #082b49;
+    text-decoration: none;
+    transition: color .15s
+}

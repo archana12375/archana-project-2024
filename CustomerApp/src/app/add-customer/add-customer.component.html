@@ -1,0 +1,139 @@
+<app-header></app-header>
+<div class="container mt-4">
+  <div class="box">
+    <form [formGroup]="addCustomer">
+      <div class="row">
+        <h3>Add New Customer</h3>
+      </div>
+      <div class="row">
+        <div class="col-sm-3 mb-2"><label for="name">Name:</label></div>
+        <div class="col-sm-3 mb-2">
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            formControlName="Name"
+            [class.is-invalid]="
+              addCustomer.get('Name')?.hasError('required') &&
+              addCustomer.get('Name')?.touched
+            "
+          />
+          <div *ngIf="addCustomer.get('Name')?.invalid && (addCustomer.get('Name')?.dirty || addCustomer.get('Name')?.touched)" class="invalid-feedback">
+            <div *ngIf="addCustomer.get('Name')?.hasError('required')">
+              Name is required.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-3 mb-2"><label for="address">Address:</label></div>
+        <div class="col-sm-3 mb-2">
+          <input
+            type="text"
+            id="address"
+            class="form-control"
+            formControlName="Address"
+            [class.is-invalid]="
+              addCustomer.get('Address')?.hasError('required') &&
+              addCustomer.get('Address')?.touched
+            "
+          />
+          <div *ngIf="addCustomer.get('Address')?.invalid && (addCustomer.get('Address')?.dirty || addCustomer.get('Address')?.touched)" class="invalid-feedback">
+            <div *ngIf="addCustomer.get('Address')?.hasError('required')">
+              Address is required.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-3 mb-2">
+          <label for="email">Email:</label>
+        </div>
+        <div class="col-sm-3 mb-2">
+          <input
+            type="email"
+            id="email"
+            class="form-control"
+            formControlName="Email"
+            [class.is-invalid]="
+              addCustomer.get('Email')?.hasError('required') &&
+              addCustomer.get('Email')?.touched
+            "
+          />
+          <div *ngIf="addCustomer.get('Email')?.invalid && (addCustomer.get('Email')?.dirty || addCustomer.get('Email')?.touched)" class="invalid-feedback">
+            <div *ngIf="addCustomer.get('Email')?.hasError('required')">
+              Email is required.
+            </div>
+            
+          </div>
+          <div  *ngIf="addCustomer.get('Email')?.hasError('email')">  
+            <span > Please enter a valid email address.     </span>            
+                    
+            </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-3 mb-2">
+          <label for="mobileNo">Mobile Number:</label>
+        </div>
+        <div class="col-sm-3 mb-2">
+          <input
+            type="tel"
+            class="form-control"
+            id="mobileNo"
+            formControlName="MobileNo"
+            [class.is-invalid]="
+              addCustomer.get('MobileNo')?.hasError('required') &&
+              addCustomer.get('MobileNo')?.touched
+            "
+          />
+          <div
+            *ngIf="
+              addCustomer.get('MobileNo')?.invalid &&
+              (addCustomer.get('MobileNo')?.dirty ||
+                addCustomer.get('MobileNo')?.touched)
+            "
+            class="invalid-feedback"
+          >
+            <div *ngIf="addCustomer.get('MobileNo')?.hasError('required')">
+              Mobile number is required.
+            </div>
+            
+          </div>
+          <div *ngIf="addCustomer.get('MobileNo')?.hasError('pattern')">
+            Mobile number must be 10 digits long.
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-3 mb-2">
+          <label for="geoLocation">Geo Location:</label>
+        </div>
+        <div class="col-sm-3 mb-2">
+          <input
+            type="text"
+            id="geoLocation"
+            formControlName="GeoLocation"
+            class="form-control"
+            
+          />
+         
+        </div>
+      </div>
+      <div class="row mb-2">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-3">
+          <button
+            type="submit "
+            class="btn-edit"
+            [formGroup]="addCustomer"
+            (click)="Submit()"
+          >
+            Submit
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
